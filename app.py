@@ -6,7 +6,7 @@ st.set_page_config(page_title="Customer Churn Prediction", layout="wide")
 st.title("📊 Customer Churn Prediction App")
 
 # Load model
-model = joblib.load("churn_model.pkl")
+model = joblib.load("model.pkl")
 
 # Load data
 df = pd.read_csv("telecom_db.csv")
