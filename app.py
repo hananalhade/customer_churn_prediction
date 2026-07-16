@@ -9,7 +9,7 @@ st.title("📊 Customer Churn Prediction App")
 model = joblib.load("model.pkl")
 
 # Load data
-df = pd.read_csv("telecom_db.csv")
+df = pd.read_csv("customers_data.csv")
 
 st.subheader("Data Preview")
 st.dataframe(df.head())
