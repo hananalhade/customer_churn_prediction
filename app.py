@@ -70,9 +70,11 @@ if menu == "الرئيسية":
 elif menu == "ادارة العملاء":
     st.title("👥 ادارة قاعدة البيانات")
     c1,c2,c3 = st.columns(3)
-    if c1.button("➕ اضافة عميل جديد"):    new_id = df['CustomerID'].max()+1
-        new_row = pd.DataFrame([[new_id,30,12,70,840,'شهر بشهر',0]], columns=df.columns)
-        st.session_state.df = pd.concat([df, new_row], ignore_index=True)
+    if c1.button("➕ اضافة عميل جديد"):
+    new_id = df['CustomerID'].max() + 1
+
+    new_row = pd.DataFrame([[new_id,30,12,70,840,'','شهر بشهر']], columns=df.columns)
+    st.session_state.df = pd.concat([df, new_row], ignore_index=True)
         st.success(f"✅ تمت اضافة العميل رقم {new_id}"); st.rerun()
     if c2.button("✏️ زيادة عمر اخر عميل"):
         st.session_state.df.loc[st.session_state.df.index[-1], 'Age'] += 1
